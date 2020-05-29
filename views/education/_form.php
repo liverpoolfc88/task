@@ -21,7 +21,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'from_date')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'to_date')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'name_file')->fileInput() ?>
 
     

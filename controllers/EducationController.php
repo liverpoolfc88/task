@@ -6,8 +6,10 @@ use Yii;
 use app\models\Education;
 use app\models\EducationSearch;
 use yii\web\Controller;
+//use yii\web\UploadedFile;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * EducationController implements the CRUD actions for Education model.
@@ -68,6 +70,8 @@ class EducationController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->user_id = Yii::$app->user->identity->id;
             $model->save() ;
+            $model->name_file = UploadedFile::getInstance($model,'name_file');
+            $model->name_file->saveAs('img/'.$model->name_file->baseName.".".$model->name_file->extension);
             return $this->redirect(['site/index', 'id' => $model->id]);
         } else {
             return $this->render('create', [

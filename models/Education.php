@@ -37,6 +37,7 @@ class Education extends \yii\db\ActiveRecord
             [['user_id'], 'integer'],
             [['university', 'location', 'from_date', 'to_date'], 'string', 'max' => 128],
             [['name_file'],'file']
+//            [['name_file'],'file', 'extensions'=>'jpg','png','gif']
         ];
 
     }

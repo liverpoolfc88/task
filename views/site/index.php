@@ -42,7 +42,12 @@ $this->title = 'My Yii Application';
                         <td>e-mail</td>
                         <td><?=$profile->email?></td>
                     </tr>
-                
+
+                    <tr>
+                        <td>Obyektivkasi</td>
+                        <td><?=$profile->name_file?></td>
+                    </tr>
+
                    
                     </tbody>
 
