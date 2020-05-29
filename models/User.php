@@ -20,6 +20,7 @@ use yii\web\IdentityInterface;
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
+// * @property integer $name_file
  * @property string $password write-only password
  */
 class User extends ActiveRecord implements IdentityInterface
@@ -54,6 +55,7 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
             [['first_name','last_name','middle_name'],'string'],
+//            [['file','file']]
         ];
     }
 

@@ -13,6 +13,7 @@ use Yii;
  * @property string $from_date
  * @property string $to_date
  * @property integer $user_id
+// * @property integer $name_file
  */
 class Education extends \yii\db\ActiveRecord
 {
@@ -35,6 +36,7 @@ class Education extends \yii\db\ActiveRecord
             [['university', 'location', 'from_date', 'to_date', 'user_id'], 'required'],
             [['user_id'], 'integer'],
             [['university', 'location', 'from_date', 'to_date'], 'string', 'max' => 128],
+            [['name_file'],'file']
         ];
 
     }

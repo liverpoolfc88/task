@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
 <div class="education-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options'=>['enctype'=>'multipart/form-data']]); ?>
 
     <?= $form->field($model, 'university')->textInput(['maxlength' => true]) ?>
 
@@ -21,6 +21,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'from_date')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'to_date')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'name_file')->fileInput() ?>
 
     
     <div class="form-group">
