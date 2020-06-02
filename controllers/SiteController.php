@@ -12,6 +12,7 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
+use yii\web\UploadedFile;
 
 
 class SiteController extends Controller
@@ -83,7 +84,7 @@ class SiteController extends Controller
     {
         if (!Yii::$app->user->isGuest) {
           
-       
+//        $file=$profile->name_file;
         $profile=User::find()->where(['id'=>Yii::$app->user->identity->id])->one();
         // $education=Education::find()->where(['user_id'=>Yii::$app->user->identity->id])->all();
 
@@ -165,9 +166,11 @@ class SiteController extends Controller
             $model=User::findOne(Yii::$app->user->identity->id);
             if ($model->load(Yii::$app->request->post())) {
 
+                $model->name_file = UploadedFile::getInstance($model,'name_file');
+                $model->name_file->saveAs('img/'.$model->name_file->baseName.".".$model->name_file->extension);
                 $model->save();
-            
-                    return $this->goHome();
+
+                return $this->goHome();
             
         }
 
@@ -176,6 +179,23 @@ class SiteController extends Controller
         ]);
         }
 
+//
+//    public function actionCreate()
+//    {
+//        $model = new Education();
+//
+//        if ($model->load(Yii::$app->request->post())) {
+//            $model->user_id = Yii::$app->user->identity->id;
+//            $model->save() ;
+//            $model->name_file = UploadedFile::getInstance($model,'name_file');
+//            $model->name_file->saveAs('img/'.$model->name_file->baseName.".".$model->name_file->extension);
+//            return $this->redirect(['site/index', 'id' => $model->id]);
+//        } else {
+//            return $this->render('create', [
+//                'model' => $model,
+//            ]);
+//        }
+//    }
 
    
 

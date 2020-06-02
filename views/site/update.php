@@ -25,7 +25,8 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= $form->field($model, 'last_name')->textInput(['autofocus' => true]) ?>
             <?= $form->field($model, 'first_name') ?>
             <?= $form->field($model, 'middle_name') ?>
-            
+            <?= $form->field($model, 'name_file')->fileInput() ?>
+
             <div class="form-group">
                 <?= Html::submitButton('Save', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
             </div>

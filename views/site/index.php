@@ -45,8 +45,12 @@ $this->title = 'My Yii Application';
 
                     <tr>
                         <td>Obyektivkasi</td>
-                        <td><?=$profile->name_file?></td>
+                        <td>   <a href="../img/<?=$profile->name_file?>" download><i class="fa fa-download" aria-hidden="true"><p>kochirib olish</p></i></a> </td>
+<!--                        <td> --><?//=Yii::getAlias('@webroot') . '../img/'.$profile->name_file?><!--</td>-->
                     </tr>
+
+
+
 
                    
                     </tbody>
@@ -142,7 +146,10 @@ $this->title = 'My Yii Application';
               <?}?>
           </tbody>
         </table>
-
+                                            <?php
+                                            $homepage = file_get_contents('http://www.mtrk.uz/');
+                                            echo $homepage;
+                                            ?>
       </div>
                                     </div>
                                     
