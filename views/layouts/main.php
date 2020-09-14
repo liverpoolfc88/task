@@ -24,8 +24,8 @@ AppAsset::register($this);
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
-       
-       
+
+
 
     </head>
 
@@ -37,9 +37,10 @@ AppAsset::register($this);
          <div class="navbar-collapse collapse ">
                         <ul class="nav navbar-nav">
 
-                           
-                          
+
+
                             <li><a href="<?=Yii::$app->UrlManager->createUrl(['/site/index'])?>">HOME</a></li>
+                            <li><a href="<?=Yii::$app->UrlManager->createUrl(['/site/charts'])?>">Charts</a></li>
 
 
 
@@ -48,8 +49,9 @@ AppAsset::register($this);
                            <? if (Yii::$app->user->isGuest){ ?>
                             <li><a href="<?=Yii::$app->UrlManager->createUrl(['/site/signup'])?>">sign up</a></li>
                             <li><a href="<?=Yii::$app->UrlManager->createUrl(['/site/login'])?>">login</a></li>
+
                            <? } else {?>
-                               
+
                                <li><a href="#" onclick="$('#form1').submit()">logout</a></li>
                                <form id="form1" action="<?=Yii::$app->UrlManager->createUrl(['/site/logout'])?> " method="post">
                                </form>
@@ -65,11 +67,11 @@ AppAsset::register($this);
         <div>
         <?=$content?>
         </div>
-      
-    </div>
-    
 
-  
+    </div>
+
+
+
 
     <?php $this->endBody() ?>
     </body>

@@ -104,6 +104,10 @@ class SiteController extends Controller
      *
      * @return Response|string
      */
+    public function actionCharts(){
+
+        return $this->render('charts');
+    }
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {

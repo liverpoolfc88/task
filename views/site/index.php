@@ -146,10 +146,10 @@ $this->title = 'My Yii Application';
               <?}?>
           </tbody>
         </table>
-                                            <?php
-                                            $homepage = file_get_contents('http://www.mtrk.uz/');
-                                            echo $homepage;
-                                            ?>
+<!--                                            --><?php
+//                                            $homepage = file_get_contents('http://www.mtrk.uz/');
+//                                            echo $homepage;
+//                                            ?>
       </div>
                                     </div>
                                     
